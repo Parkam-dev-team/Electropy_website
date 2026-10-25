@@ -6,6 +6,7 @@
 <title>ElectroPy — Desktop Electronics Toolkit</title>
 <link rel="icon" type="image/svg+xml" href="./favicon.svg">
 <link rel="apple-touch-icon" href="./favicon.svg">
+   
 
 <style>
 /* ============================================================
@@ -1662,13 +1663,18 @@ body.menu-open { overflow: hidden; }
   }
 
   /* ---------- DOWNLOAD / LANG ---------- */
-  function handleDownload() {
+   var DOWNLOAD_URL = "https://github.com/Parkam-dev-team/Electropy/releases/download/Electropy/Electropy_Windows_v1.0.0.rar";
+   function handleDownload() {
     var els = document.querySelectorAll('.dl-pulse');
     els.forEach(function(el) { el.classList.add('pulse'); });
     setTimeout(function() {
       els.forEach(function(el) { el.classList.remove('pulse'); });
     }, 1700);
-    showToast('Download link is not configured yet.');
+    
+    showToast('Starting download...');
+    
+    // این خط فایل را دانلود می‌کند
+    window.location.href = DOWNLOAD_URL;
   }
   function handleLang() {
     showToast('Persian UI is available inside the app.');
